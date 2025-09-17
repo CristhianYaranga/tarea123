@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/catalogo.css') }}">
+    <title>Servicio Técnico SOPANTA</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Servicio Tecnico SOPANTA</div>
+            <div class="search-bar"></div>
+            <ul class="nav-links">
+                <li><a href="#fundas">Fundas</a></li>
+                <li><a href="#cargadores">Cargadores</a></li>
+                <li><a href="#auriculares">Auriculares</a></li>
+                <li><a href="#soportes">Soportes</a></li>
+                <li><a href="#protectores">Protectores</a></li>
+                <li><a href="#otros">Otros</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Catálogo de Accesorios para Celulares y Tablets</h1>
+        
+        <section class="index-section">
+            <h2>Índice de Productos</h2>
+            <div class="index-grid">
+                <div class="index-item">
+                    <a href="#fundas">
+                        <div class="index-icon">📱</div>
+                        <span>Fundas y Protectores</span>
+                    </a>
+                </div>
+                <div class="index-item">
+                    <a href="#cargadores">
+                        <div class="index-icon">🔌</div>
+                        <span>Cargadores y Cable</span>
+                    </a>
+                </div>
+                <div class="index-item">
+                    <a href="#auriculares">
+                        <div class="index-icon">🎧</div>
+                        <span>Auriculares</span>
+                    </a>
+                </div>
+                <div class="index-item">
+                    <a href="#soportes">
+                        <div class="index-icon">📲</div>
+                        <span>Soportes y Bases</span>
+                    </a>
+                </div>
+                <div class="index-item">
+                    <a href="#protectores">
+                        <div class="index-icon">🛡️</div>
+                        <span>Protectores de Pantalla</span>
+                    </a>
+                </div>
+                <div class="index-item">
+                    <a href="#otros">
+                        <div class="index-icon">✨</div>
+                        <span>Otros Accesorios</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="fundas" class="product-section">
+            <h2 class="category-title">Fundas y Protectores</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/fundas/fundaiphone.jpg') }}" alt="Funda para iPhone">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Funda Protectora iPhone 13</h3>
+                        <p class="product-description">Funda resistente a impactos con diseño elegante</p>
+                        <p class="product-price">$15.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/fundas/fundasamsung.jpg') }}" alt="Funda para Samsung">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Funda Resistente Samsung S22</h3>
+                        <p class="product-description">Protección militar contra caídas y golpes</p>
+                        <p class="product-price">$18.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/fundas/fundatablet.jpg') }}" alt="Funda para Tablet">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Funda con Teclado para iPad</h3>
+                        <p class="product-description">Funda con teclado Bluetooth integrado</p>
+                        <p class="product-price">$35.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/fundas/fundapersonalizada.jpg') }}" alt="Estuche Personalizado">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Estuche Personalizado</h3>
+                        <p class="product-description">Personaliza con tus fotos y diseños</p>
+                        <p class="product-price">$22.50</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cargadores" class="product-section">
+            <h2 class="category-title">Cargadores y Cables</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/cargador/cargador.jpg') }}" alt="Cargador Rápido">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cargador Rápido 25W</h3>
+                        <p class="product-description">Carga rápida para todos tus dispositivos</p>
+                        <p class="product-price">$19.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/cargador/cabletipoC.jpg') }}" alt="Cable USB-C">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cable USB-C 2m Resistente</h3>
+                        <p class="product-description">Cable reforzado para mayor durabilidad</p>
+                        <p class="product-price">$12.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/cargador/Bancoenergia.jpg') }}" alt="Banco de Energía">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Banco de Energía 10000mAh</h3>
+                        <p class="product-description">Batería portátil para cargar en cualquier lugar</p>
+                        <p class="product-price">$29.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/cargador/cargadorinalambrico.jpg') }}" alt="Cargador Inalámbrico">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Base Cargadora Inalámbrica</h3>
+                        <p class="product-description">Carga sin cables con tecnología Qi</p>
+                        <p class="product-price">$24.50</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="auriculares" class="product-section">
+            <h2 class="category-title">Auriculares</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/auriculares/audifonobluetooth.jpg') }}" alt="Auriculares Inalámbricos">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Auriculares Bluetooth 5.0</h3>
+                        <p class="product-description">Sonido de alta calidad con cancelación de ruido</p>
+                        <p class="product-price">$35.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/auriculares/auriculardeportivo.jpg') }}" alt="Auriculares Deportivos">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Auriculares Deportivos Resist al Agua</h3>
+                        <p class="product-description">Ideales para entrenamiento y ejercicio</p>
+                        <p class="product-price">$28.50</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/auriculares/auriculargamer.jpg') }}" alt="Audífonos Gamer">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Audífonos con Micrófono para Gaming</h3>
+                        <p class="product-description">Experiencia inmersiva para juegos</p>
+                        <p class="product-price">$42.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/auriculares/auriculardiadema.jpg') }}" alt="Auriculares Diadema">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Auriculares Diadema Bluetooth</h3>
+                        <p class="product-description">Comodidad y gran calidad de sonido</p>
+                        <p class="product-price">$39.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="soportes" class="product-section">
+            <h2 class="category-title">Soportes y Bases</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/soportes/soporteauto.jpg') }}" alt="Soporte para Auto">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Soporte para Auto Ajustable</h3>
+                        <p class="product-description">Sujete seguro para el salpicadero o ventilación</p>
+                        <p class="product-price">$15.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/soportes/soportemesa.jpg') }}" alt="Soporte para Mesita">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Soporte Ajustable para Mesita</h3>
+                        <p class="product-description">Posición perfecta para ver videos o hacer videollamadas</p>
+                        <p class="product-price">$18.50</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/soportes/soportecargador.jpg') }}" alt="Base Cargadora">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Base Cargadora con Soporte</h3>
+                        <p class="product-description">Carga y visualización al mismo tiempo</p>
+                        <p class="product-price">$22.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/soportes/soporteuniversal.jpg') }}" alt="Soporte Plegable">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Soporte Plegable Universal</h3>
+                        <p class="product-description">Compacto y portable para llevar a cualquier parte</p>
+                        <p class="product-price">$9.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="protectores" class="product-section">
+            <h2 class="category-title">Protectores de Pantalla</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/micas/micaiphone.jpg') }}" alt="Protector de Vidrio Templado">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Protector de Vidrio Templado iPhone</h3>
+                        <p class="product-description">Protección de alta resistencia contra arañazos</p>
+                        <p class="product-price">$12.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/micas/micatablet.jpg') }}" alt="Protector para Tablet">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Protector de Vidrio para iPad</h3>
+                        <p class="product-description">Máxima protección para tablets</p>
+                        <p class="product-price">$19.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/micas/micaantireflejo.jpg') }}" alt="Protector Anti-Reflejo">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Protector Anti-Reflejo Samsung</h3>
+                        <p class="product-description">Reduce los reflejos para mejor visibilidad</p>
+                        <p class="product-price">$15.50</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ url_for('static', filename='images/micas/mica360.jpg') }}" alt="Protector de Privacidad">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Protector de Privacidad 360°</h3>
+                        <p class="product-description">Solo tú puedes ver tu pantalla</p>
+                        <p class="product-price">$21.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="otros" class="product-section">
+            <h2 class="category-title">Otros Accesorios</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x200/f5f5f5/333333?text=Adaptador+Bluetooth" alt="Adaptador Bluetooth">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Adaptador Bluetooth para Auto</h3>
+                        <p class="product-description">Convierte tu auto en compatible con Bluetooth</p>
+                        <p class="product-price">$18.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x200/f5f5f5/333333?text=Lápiz+Tablet" alt="Lápiz para Tablet">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Lápiz Digital para Tablets</h3>
+                        <p class="product-description">Precisión para dibujar y tomar notas</p>
+                        <p class="product-price">$25.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x200/f5f5f5/333333?text=Tarjeta+Memoria" alt="Tarjeta de Memoria">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Tarjeta de Memoria 128GB</h3>
+                        <p class="product-description">Amplía el almacenamiento de tu dispositivo</p>
+                        <p class="product-price">$24.50</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://via.placeholder.com/300x200/f5f5f5/333333?text=Limpiador+Pantalla" alt="Kit de Limpieza">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Kit de Limpieza para Pantallas</h3>
+                        <p class="product-description">Mantén tus dispositivos limpios y sin huellas</p>
+                        <p class="product-price">$8.99</p>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:animate-bounce">
+                        Añadir al Carrito
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <a href="#" class="back-to-top">↑</a>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Servicio Técnico SOPANTA</h3>
+                <p>Tu tienda de confianza para accesorios móviles</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>Email: serviciotecnicosopanta@gmail.com</p>
+                <p>Teléfono: +51 965458016</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <p><a href="#fundas">Fundas</a></p>
+                <p><a href="#cargadores">Cargadores</a></p>
+                <p><a href="#auriculares">Auriculares</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Servicio Técnico SOPANTA &copy; 2025 - Todos los derechos reservados</p>
+        </div>
+    </footer>
+        <script src="{{ url_for('static', filename='js/catalogo.js') }}"></script>
+
+</body>
+</html>

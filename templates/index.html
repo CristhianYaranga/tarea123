@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+    <title>Servicio Técnico SOPANTA</title>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-black via-blue-300 to-sky-blue-900 text-white">
+    <!-- Navigation -->
+    <nav class="glass-effect backdrop-blur-md border-b border-black/20">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+
+                <!-- Logo -->
+                <img src="{{ url_for('static', filename=logo_image) }}" alt="Company Logo" class="w-12 h-12 rounded-full object-cover floating-animation">
+
+                <!-- Barra de búsqueda -->
+                <div class="relative hidden md:block">
+                    <input type="text" placeholder="Buscar..." class="border border-black-700 rounded-full py-2 px-4 pr-10 focus:outline-none focus:ring-2 focus:ring-red-700">
+                    <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-black">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a7 7 0 100 14 7 7 0 000-14zm0 0v1m0 12v1m8-8h1m-12 0H4m16 0a8 8 0 11-8-8 8 8 0 018 8z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Navigation Links CORREGIDOS -->
+                <ul class="hidden md:flex space-x-8">
+                    <li>
+                        <a href="#inicio" class="relative group font-medium text-white hover:text-red-400 transition-all duration-300 px-4 py-2 transform hover:scale-105">
+                            Inicio
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#servicios" class="relative group font-medium text-white hover:text-red-400 transition-all duration-300 px-4 py-2 transform hover:scale-105">
+                            Servicios
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contacto" class="relative group font-medium text-white hover:text-red-400 transition-all duration-300 px-4 py-2 transform hover:scale-105">
+                            Contacto
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile menu button -->
+                <button class="md:hidden bg-red-700 text-white px-4 py-2 rounded-lg morphing-button">
+                    Menú
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        <!-- Header Section -->
+        <section id="inicio" class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+                Servicio Técnico Especializado
+                <span class="block text-blue-700 mt-2">SOPANTA</span>
+            </h1>
+        </section>
+
+        <!-- Carousel Section -->
+        <div class="carousel-container mb-16 max-w-4xl mx-auto">
+            <div class="carousel-track" id="carouselTrack">
+                {% for slide in carousel_data %}
+                <div class="carousel-slide">
+                    <img src="{{ url_for('static', filename='images/' + slide.image) }}" alt="{{ slide.alt }}" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+                        <div class="text-white p-8">
+                            <h3 class="text-2xl font-bold mb-2">{{ slide.title }}</h3>
+                            <p>{{ slide.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <button class="carousel-nav prev" onclick="previousSlide()">‹</button>
+            <button class="carousel-nav next" onclick="nextSlide()">›</button>
+            
+            <div class="carousel-indicators">
+                {% for i in range(carousel_data|length) %}
+                <div class="carousel-dot {% if loop.first %}active{% endif %}" onclick="currentSlide({{ loop.index }})"></div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Services Grid -->
+        <section id="servicios" class="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <!-- Services List -->
+            <div class="glass-effect rounded-2xl p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Nuestros Servicios</h2>
+                <div class="space-y-4">
+                    {% for service in services %}
+                    <div class="service-item flex items-center space-x-3 p-3 rounded-lg">
+                        <span class="text-green-500 text-xl">✅</span>
+                        <span class="font-medium">{{ service }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Contact Card -->
+            <div id="contacto" class="glass-effect rounded-2xl p-8 text-center">
+                <div class="mb-6">
+                    <div class="w-16 h-16 bg-red-700 rounded-full flex items-center justify-center mx-auto mb-4 pulse-glow">
+                        <span class="text-2xl">📞</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">¡Contáctanos!</h3>
+                    <p class="text-gray-600 mb-4">Atención personalizada para resolver todas tus dudas</p>
+                    <a href="tel:{{ phone_number }}" class="text-3xl font-bold text-red-700 hover:text-red-800 transition-colors">
+                        {{ phone_number }}
+                    </a>
+                </div>
+                
+                <a href="tel:{{ phone_number }}" class="morphing-button bg-red-700 hover:bg-red-800 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 mb-4 w-full block text-center">
+                    Llamar Ahora
+                </a>
+                
+                <a href="https://wa.me/+51 965458016{{ phone_number.replace(' ', '') }}" target="_blank" class="morphing-button bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 w-full block text-center">
+                    WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="text-center glass-effect rounded-2xl p-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">¿Necesitas reparar tu dispositivo?</h2>
+            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Somos especialistas en reparación de smartphones y tablets. Ofrecemos servicio rápido, 
+                garantizado y con los mejores precios del mercado.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{{ url_for('catalogo') }}" 
+            class="morphing-button bg-red-700 hover:bg-red-800 text-white font-semibold px-8 py-4 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 text-center">
+            Ver Catálogo
+            </a>
+
+            <button class="morphing-button bg-transparent border-2 border-red-700 text-red-700 hover:bg-red-700 hover:text-white font-semibold px-8 py-4 rounded-full text-lg">
+                Solicitar Cotización
+            </button>
+        </div>
+
+    <script src="{{ url_for('static', filename='js/carrusel.js') }}"></script>
+</body>
+</html>
